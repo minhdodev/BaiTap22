@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <h2>Dữ liệu từ Web API:</h2>
+</div>
+
+@model Bai22.Models.CircleViewModel
+
+<form asp-action="Index" method="post">
+    Bán kính: <input asp-for="rr"/>
+    <input type="submit" value="Tính" />
+</form>
+
+@if(Model.rr > 0)
+{
+    <div>
+        Diện tích: @Model.DienTich
+        <br />
+        Chu vi: @Model.ChuVi
+        <br />
+        Đường kính: @Model.DuongKinh
+    </div>
+}
